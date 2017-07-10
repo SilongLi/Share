@@ -960,3 +960,11 @@ CGFloat width  = frame.size.width;
 CGFloat height = frame.size.height;
 ```
 
+### 22. git分支功能介绍
+
+- master: 主分支。只对应线上版本的代码。
+- develop: 开发分支，永远是最新的代码，团队成员需要开始新需求的时候，都是在这个分支上拉取代码。
+- fixbug: 修复线上bug的临时分支。代码从master上check下来，上线后merge到master和develop上去，并且会被删除掉。
+- release: 发布版本时的临时分支，从develop分支上check下来，用于固定发布那一刻的代码版本，如果在发布期间有问题可以在此分支上进行修改。上线后会合并到master和develop上去，并且会被删除掉。
+
+
