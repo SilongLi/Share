@@ -960,11 +960,58 @@ CGFloat width  = frame.size.width;
 CGFloat height = frame.size.height;
 ```
 
-### 22. git分支功能介绍
+### 22. 项目中的git分支功能介绍
 
-- master: 主分支。只对应线上版本的代码。
-- develop: 开发分支，永远是最新的代码，团队成员需要开始新需求的时候，都是在这个分支上拉取代码。
-- fixbug: 修复线上bug的临时分支。代码从master上check下来，上线后merge到master和develop上去，并且会被删除掉。
-- release: 发布版本时的临时分支，从develop分支上check下来，用于固定发布那一刻的代码版本，如果在发布期间有问题可以在此分支上进行修改。上线后会合并到master和develop上去，并且会被删除掉。
+- master: 
+	- 主分支。只对应线上版本的代码。
+- develop: 
+	- 开发分支，永远是最新的代码，团队成员需要开始新需求的时候，都是在这个分支上拉取代码。
+- fixbug: 
+	- 修复线上bug的临时分支。代码从master上check下来，上线后merge到master和develop上去，并且会被删除掉。
+- release:
+	- 发布版本时的临时分支，从develop分支上check下来，用于固定发布那一刻的代码版本，如果在发布期间有问题可以在此分支上进行修改。上线后会合并到master和develop上去，并且会被删除掉。
+
+### 23. git使用
+- 配置和克隆代码
+
+```objc
+	1. 配置git名称： git config --global user.name "Bruce Li"
+	2. 配置git邮箱： git config --global user.email "xxx@163.com"
+	3. 查看配置信息： git config -l
+	4. 克隆代码：git clone "git地址"
+```
+
+- 代码管理
+
+```objc
+	1. 查看文件状态：git status
+	2. 添加所有文件到暂缓区： git add .
+	3. 提交暂缓区的代码到本地： git commit -m"提交代码说明。"
+	4. 用rebase拉去代码：git pull origin 分支名称 --rebase 
+	5. 把代码退到远程服务器：git push origin 分支名称
+```
+
+- 分支管理 
+
+```objc
+	1. 查看本地分支 git branch
+	2. 查看所有分支： git branch -a
+	3. 切换分支： git checkout 分支名称
+	4. 创建本地分支： git branch 分支名称
+	5. 把本地分支提交到远程服务器： git push origin 分支名称
+	6. 使用rebase合并分支：git rebase 需要和并的分支名称
+	7. 删除本地分支： git branch -d 分支名称
+	8. 删除远程分支： git push origin --delete 分支名称
+```
+
+- 标签（tag）管理
+
+```objc
+4. 查看当前的标签： git tag
+5. 打标签：git tag -a "标签名" -m"当前标签的信息"
+6. 把当前标签推送到远程： git push origin --tag
+7. 删除本地标签：git tag -d 标签名
+8. 删除远程标签： git push origin -delete 标签名
+```
 
 
