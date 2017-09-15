@@ -926,11 +926,11 @@ NSArray *array = @[
   					@"b",
   					@"b"
 					];
-NSDictionary *dictionary = @{
-							@"a" : @"",
-							@"b" : @"",
-							@"c" : @""
-                            };
+					
+// 就算value值为nil也不会奔溃
+NSMutableDictionary *params = [NSMutableDictionary dictionary];
+[params setValue:@"Long" forKey:@"userName"];
+[params setValue:@(25) forKey:@"age"];
 ```
 
 - 不建议写法
@@ -945,8 +945,8 @@ NSDictionary *dictionary = @{@"a" : @"", @"b" : @"", @"c" : @""};
 - 建议的写法
 
 ```objc 
-CGFloat x 	   = CGRectGetMinX(frame);
-CGFloat y 	   = CGRectGetMinY(frame);
+CGFloat x = CGRectGetMinX(frame);
+CGFloat y = CGRectGetMinY(frame);
 CGFloat width  = CGRectGetWidth(frame);
 CGFloat height = CGRectGetHeight(frame);
 ```
