@@ -999,9 +999,13 @@ CGFloat height = frame.size.height;
 	3. 切换分支： git checkout 分支名称
 	4. 创建本地分支： git branch 分支名称
 	5. 把本地分支提交到远程服务器： git push origin 分支名称
-	6. 使用rebase合并分支：git rebase 需要和并的分支名称
+	6.（推荐）使用rebase合并分支：git rebase 需要和并的分支名称
 	7. 删除本地分支： git branch -d 分支名称
 	8. 删除远程分支： git push origin --delete 分支名称
+
+	使用merge合并方式（推荐使用“--no-ff”修饰）：
+	1. 切换到Master分支：git checkout master
+　　2. 对Develop分支进行合并：git merge --no-ff develop
 ```
 
 - 标签（tag）管理
